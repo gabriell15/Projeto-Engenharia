@@ -35,24 +35,23 @@ public void Salvar( ModeloCartaoCredito mod){
             
      
             
-             PreparedStatement pst= conex.con.prepareStatement("insert into cartao_credito( cvv, numero, data_validade, nome_p, titulo_jogo, valor) values(?,?,?,?,?,?)");
+             PreparedStatement pst= conex.con.prepareStatement("insert into cartao_credito( cvv, numero, data_validade, nome_p) values(?,?,?,?)");
              
             pst.setInt(1, mod.getCvv());
             pst.setInt(2, mod.getNumero());
             pst.setString(3, mod.getData_Validade());
             pst.setString(4, mod.getPessoa());
-            pst.setString(5, mod.getTitulo());
-            pst.setDouble(6, mod.getValor());
+       
          
              
             pst.execute();
             
 
              
-             JOptionPane.showMessageDialog(null, "Dados inseridos com sucesso !!");
+             JOptionPane.showMessageDialog(null, "Dados do cartão salvas com sucesso!!");
              
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao inserir dados!!\n"+ex);
+            JOptionPane.showMessageDialog(null, "Erro ao inserir dados do cartão!!\n"+ex);
             
         }
     conex.desconecta();
@@ -81,9 +80,7 @@ public ModeloCartaoCredito buscaCartao( ModeloCartaoCredito mod){
             mod.setNumero(conex.rs.getInt("numero"));
             mod.setData_Validade(conex.rs.getString("data_validade"));
             mod.setPessoa(conex.rs.getString("nome_p"));
-            
-            mod.setTitulo(conex.rs.getString("titulo_jogo"));
-            mod.setValor(conex.rs.getDouble("valor"));
+        
  
             
             

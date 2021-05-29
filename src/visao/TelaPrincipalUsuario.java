@@ -38,8 +38,13 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenuEditarPerfil = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
+        jMenuItem9 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuSair = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
 
@@ -121,10 +126,36 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuEditarPerfil);
 
+        jMenu3.setText("Histórico ");
+
+        jMenuItem9.setText("Histórico de compras");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem9);
+
+        jMenuBar1.add(jMenu3);
+
         jMenu2.setText("Listar jogos");
 
-        jMenu3.setText("Lista de jogos");
-        jMenu2.add(jMenu3);
+        jMenuItem5.setText("Jogos");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem5);
+
+        jMenuItem6.setText("Esporte");
+        jMenu2.add(jMenuItem6);
+
+        jMenuItem7.setText("Ação");
+        jMenu2.add(jMenuItem7);
+
+        jMenuItem8.setText("Estratégia");
+        jMenu2.add(jMenuItem8);
 
         jMenuBar1.add(jMenu2);
 
@@ -193,6 +224,18 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCsgoActionPerformed
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        // TODO add your handling code here:
+         FormHistóricoCompra tela = new FormHistóricoCompra(); //Chama a tela de HISTÓRICO
+        tela.setVisible(true);//chama a tela
+        dispose(); //Fecha a tela anterior
+        
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -241,6 +284,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenu jMenuSair;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

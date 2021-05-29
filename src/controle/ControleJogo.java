@@ -176,7 +176,7 @@ public ModeloJogo buscaJogoEscolha( ModeloJogo mod){
 public ModeloJogo buscaJogoAutomatico(){
     conex.conexao();
 //    conex.executaSql("select *from  medico where nome like'%"+mod.getPesquisa()+"%'");
-    conex.executaSql("select *from jogo where titulo_jogo ='Resident Evil'");
+    conex.executaSql("select *from jogo where titulo_jogo ='FIFA 21'");
     
     
    // conex.executaSql("select *from  medico where nome '"+mod.getPesq()+"'");
@@ -188,8 +188,7 @@ public ModeloJogo buscaJogoAutomatico(){
             mod.setId_Jogo(conex.rs.getString("id_jogo"));
             mod.setTitulo_jogo(conex.rs.getString("titulo_jogo"));
             mod.setValor(conex.rs.getDouble("valor"));
-            
-            JOptionPane.showMessageDialog(null, "Chegou aqui!!\n");
+       
            
  
             
@@ -199,20 +198,7 @@ public ModeloJogo buscaJogoAutomatico(){
         }
     
         
-      /*  conex.executaSql("select *from genero where id_jogo ='"+mod.getPesquisa()+"'");
-         try {
-             
-            conex.rs.first();
-           
-            mod.setGenero(conex.rs.getString("genero"));
- 
-            
-            
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao buscar genero!!/n"+ex);
-        }
-        */
-        
+   
     conex.desconecta();
     return mod;
 }
@@ -235,8 +221,7 @@ public ModeloJogo buscaJogosEsporte(ModeloJogo mod){
             mod.setTitulo_jogo(conex.rs.getString("titulo_jogo"));
             mod.setValor(conex.rs.getDouble("valor"));
             
-            JOptionPane.showMessageDialog(null, "Chegou aqui!!\n");
-           
+
  
             
             

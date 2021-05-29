@@ -9,6 +9,7 @@ package controle;
 
 import controle.ConexaoBD;
 import modelo.ModeloEmpresa;
+import modelo.ModeloJogo;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -23,6 +24,8 @@ public class ControleEmpresa {
     
     ConexaoBD conex= new ConexaoBD();
     ModeloEmpresa mod= new ModeloEmpresa();
+     ModeloJogo model= new ModeloJogo();
+    
     
 
     
@@ -185,8 +188,7 @@ public ModeloEmpresa buscaEmpresa( ModeloEmpresa mod){
     conex.conexao();
 //    conex.executaSql("select *from  medico where nome like'%"+mod.getPesquisa()+"%'");
     conex.executaSql("select *from empresa where cnpj ='"+mod.getPesquisa()+"'");
-    
-   // conex.executaSql("select *from  medico where nome '"+mod.getPesq()+"'");
+
     
         try {
              
@@ -202,9 +204,13 @@ public ModeloEmpresa buscaEmpresa( ModeloEmpresa mod){
             JOptionPane.showMessageDialog(null, "Erro ao buscar empresa!!/n"+ex);
         }
     
+       
+        
     conex.desconecta();
     return mod;
 }
+
+
 
 
 
@@ -254,7 +260,7 @@ public void Excluir(ModeloEmpresa mod){
             
            // PreparedStatement pstEndereco= conex.con.prepareStatement("delete from endereco where codendereco=?");
             PreparedStatement pst= conex.con.prepareStatement("delete from empresa where cnpj=?");
-          
+       
             //PreparedStatement pstContato= conex.con.prepareStatement("delete from contato_medico where medico_cpf=?");
             
             //pstEndereco.setInt(1, mod.getCod_endereco());

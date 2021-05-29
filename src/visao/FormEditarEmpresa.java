@@ -9,7 +9,10 @@ package visao;
 import controle.ConexaoBD;
 
 import controle.ControleEmpresa;
+
 import modelo.ModeloEmpresa;
+
+
 import modelo.ModeloTabela;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -25,8 +28,10 @@ import javax.swing.ListSelectionModel;
 public class FormEditarEmpresa extends javax.swing.JFrame {
     
     ModeloEmpresa mod= new ModeloEmpresa();
+  
     
     ControleEmpresa contro= new ControleEmpresa();
+   
     ConexaoBD conex= new ConexaoBD();
      int flag= 0;
     
@@ -185,17 +190,17 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 645, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(197, 197, 197)
+                        .addGap(281, 281, 281)
                         .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addGap(28, 28, 28)
                         .addComponent(jButtonPesquisa))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(180, 180, 180)
+                        .addGap(95, 95, 95)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
                         .addComponent(jLabel6)))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,15 +222,15 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
                     .addComponent(jButtonCancelar)
                     .addComponent(jButtonSalvar)
                     .addComponent(jButtonExcluir))
-                .addGap(124, 124, 124)
+                .addGap(126, 126, 126)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonPesquisa))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(301, 301, 301))
+                .addGap(313, 313, 313))
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -271,13 +276,17 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
       
 
         mod.setPesquisa(jTextFieldPesquisa.getText());
+     
 
         ModeloEmpresa model= contro.buscaEmpresa(mod);
+       
 
         jFormattedTextFieldCNPJ.setText(model.getCnpj());
         jTextFieldNome.setText(model.getNome());
         jTextFieldEmail.setText(model.getEmail());
         jPasswordFieldSenha.setText(model.getSenha());
+        
+ 
      
 
 
@@ -357,9 +366,11 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
         if(resposta== JOptionPane.YES_OPTION){
             //mod.setCod_endereco(Integer.parseInt(jTextFieldCodEndereco.getText()));
             mod.setCnpj(jFormattedTextFieldCNPJ.getText());
+           
 
             //mod.setMentor(Integer.parseInt(jFormattedTextFieldMentor.getText()));
             contro.Excluir(mod);
+        
         }
 
         //DEpois de excluir os campos vão ficar em branco :
@@ -404,7 +415,6 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
             jPasswordFieldSenha.setEnabled(false);
             jTextFieldEmail.setEnabled(false);
 
-            jButtonCancelar.setEnabled(false);
 
           
 
@@ -445,16 +455,16 @@ public class FormEditarEmpresa extends javax.swing.JFrame {
         ModeloTabela modelo= new ModeloTabela(dados, colunas);
         
         jTableEmpresa.setModel(modelo);
-        jTableEmpresa.getColumnModel().getColumn(0).setPreferredWidth(50);
+        jTableEmpresa.getColumnModel().getColumn(0).setPreferredWidth(150);
         
         //Empresa nao vai poder mecher com o tamanho da tabela com o mause:
         jTableEmpresa.getColumnModel().getColumn(0).setResizable(false);
         
-        jTableEmpresa.getColumnModel().getColumn(1).setPreferredWidth(100);
+        jTableEmpresa.getColumnModel().getColumn(1).setPreferredWidth(150);
         jTableEmpresa.getColumnModel().getColumn(1).setResizable(false);
-        jTableEmpresa.getColumnModel().getColumn(2).setPreferredWidth(100);
+        jTableEmpresa.getColumnModel().getColumn(2).setPreferredWidth(150);
         jTableEmpresa.getColumnModel().getColumn(2).setResizable(false);
-        jTableEmpresa.getColumnModel().getColumn(3).setPreferredWidth(100);
+        jTableEmpresa.getColumnModel().getColumn(3).setPreferredWidth(150);
         jTableEmpresa.getColumnModel().getColumn(3).setResizable(false);
      
       
